@@ -2,6 +2,14 @@
 using std::cout; using std::endl;
 
 int main (){
+    /*
+    type &ptr --> Declaration of reference
+    type *ptr --> Declaration of pointer
+
+    &ptr (other places) --> Address
+    *ptr (other places) --> Dereference
+    */
+
     long l = 123;
     long &r_l = l;
     long *p_l = &r_l;
