@@ -2,9 +2,14 @@
 
 Homeworks/Pre-class/In-class assignments of [CSE822 Parallel Computing](https://msu-cmse-courses.github.io/cmse822-FS21/) taken by [Prof William (Bill) Punch](https://www.egr.msu.edu/~punch/) at Michigan State University (MSU) in Fall 2021
 
+### Schedule
+1. Lectures - Tuesday/Thursday 10:20-11:40 AM in Room EB1230
+2. Office Hours - Monday/Wednesday 3:00-5:00 PM on [Zoom 9299924290](https://msu.zoom.us/j/9299924290?pwd=WGY0WkRVTis2UUhjSE5GdlR1NTR4QT09)/395525
+
 ### Requirements
 1. Ubuntu 18.04
 2. C++
+3. MSU HPCC Access
 
 Other platforms have not been tested.
 
