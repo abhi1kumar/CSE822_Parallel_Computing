@@ -1,0 +1,64 @@
+
+Lmod is automatically replacing "GNU/6.4.0-2.28" with "GCC/6.4.0-2.28".
+
+
+Lmod is automatically replacing "GNU/6.4.0-2.28" with "GCC/6.4.0-2.28".
+
+-------------------------------------------------------------------------------
+The following dependent module(s) are not currently loaded: OpenBLAS/0.2.20 (required by: ScaLAPACK/2.0.2-OpenBLAS-0.2.20, Boost/1.67.0, Python/3.6.4, ScaLAPACK/2.0.2-OpenBLAS-0.2.20, Boost/1.67.0, Python/3.6.4)
+-------------------------------------------------------------------------------
+Hello HPCC 
+
+JobId=33237815 JobName=hello_hpcc
+   UserId=kumarab6(6007679) GroupId=cse(2010) MCS_label=N/A
+   Priority=59991 Nice=0 Account=general QOS=kumarab6
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:11 TimeLimit=00:01:00 TimeMin=N/A
+   SubmitTime=2021-09-07T11:32:56 EligibleTime=2021-09-07T11:32:56
+   AccrueTime=2021-09-07T11:32:56
+   StartTime=2021-09-07T11:32:56 EndTime=2021-09-07T11:33:56 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2021-09-07T11:32:56
+   Partition=general-long AllocNode:Sid=dev-amd20:81136
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=css-083
+   BatchHost=css-083
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=1G,node=1,billing=155
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryCPU=1G MinTmpDiskNode=0
+   Features=[intel14|intel16|intel18|amr|nvf] DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/mnt/ufs18/home-085/kumarab6/courses/CSE822_Parallel_Computing/in_class/week1_day1/script_slurm.sb
+   WorkDir=/mnt/ufs18/home-085/kumarab6/courses/CSE822_Parallel_Computing/in_class/week1_day1
+   Comment=stdout=/mnt/ufs18/home-085/kumarab6/courses/CSE822_Parallel_Computing/in_class/week1_day1/slurm-33237813.out 
+   StdErr=/mnt/ufs18/home-085/kumarab6/courses/CSE822_Parallel_Computing/in_class/week1_day1/slurm-33237815.out
+   StdIn=/dev/null
+   StdOut=/mnt/ufs18/home-085/kumarab6/courses/CSE822_Parallel_Computing/in_class/week1_day1/slurm-33237815.out
+   Power=
+   NtasksPerTRES:0
+
+
+SLURM Job ID: 33237815
+WrkDir=/mnt/ufs18/home-085/kumarab6/courses/CSE822_Parallel_Computing/in_class/week1_day1
+=========================================================================================================
+          JobID |            33237815 |      33237815.batch |     33237815.extern |          33237815.0 |
+        JobName |          hello_hpcc |               batch |              extern |               a.out |
+           User |            kumarab6 |                     |                     |                     |
+       NodeList |             css-083 |             css-083 |             css-083 |             css-083 |
+         NNodes |                   1 |                   1 |                   1 |                   1 |
+         NTasks |                     |                   1 |                   1 |                   1 |
+          NCPUS |                   1 |                   1 |                   1 |                   1 |
+      AllocGRES |                     |                     |                     |                     |
+         ReqMem |                 1Gc |                 1Gc |                 1Gc |                 1Gc |
+      Timelimit |            00:01:00 |                     |                     |                     |
+        Elapsed |            00:00:15 |            00:00:15 |            00:00:15 |            00:00:03 |
+       TotalCPU |           00:00.034 |            00:00:03 |            00:00:00 |           00:00.034 |
+     AveCPULoad |          0.00226667 |                 0.2 |                     |           0.0113333 |
+         MaxRSS |                     |               3124K |                     |                   0 |
+      MaxVMSize |                     |             217604K |                     |             287392K |
+          Start | 2021-09-07T11:32:56 | 2021-09-07T11:32:56 | 2021-09-07T11:32:56 | 2021-09-07T11:33:04 |
+            End |             Unknown |             Unknown |             Unknown | 2021-09-07T11:33:07 |
+       ExitCode |                 0:0 |                 0:0 |                 0:0 |                 0:0 |
+          State |             RUNNING |             RUNNING |             RUNNING |           COMPLETED |
+=========================================================================================================
