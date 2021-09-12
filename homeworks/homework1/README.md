@@ -11,7 +11,7 @@ chmod +x main.sh
 ```
 
 ### Results 
-Results are in ```ouput.log```
+Results are in [ouput.log](output.log)
 
 ### Discussions
 1. **With optimization (something like `-O2`) turned on and turned off (`-O0`)**
