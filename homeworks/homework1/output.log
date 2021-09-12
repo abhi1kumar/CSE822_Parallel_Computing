@@ -1,0 +1,52 @@
+Normal Branch Prediction without Sorting
+Sort= 0 Array_size = 32 Repeat= 100000 Sum= 292300000 Time_avg= 0.00000004 Time_total= 0.00446300
+Sort= 0 Array_size = 64 Repeat= 100000 Sum= 614300000 Time_avg= 0.00000009 Time_total= 0.00887800
+Sort= 0 Array_size = 128 Repeat= 100000 Sum= 1313100000 Time_avg= 0.00000018 Time_total= 0.01787200
+Sort= 0 Array_size = 256 Repeat= 100000 Sum= 2622000000 Time_avg= 0.00000034 Time_total= 0.03392600
+Sort= 0 Array_size = 512 Repeat= 100000 Sum= 5080100000 Time_avg= 0.00000070 Time_total= 0.07006600
+Sort= 0 Array_size = 1024 Repeat= 100000 Sum= 9912100000 Time_avg= 0.00000140 Time_total= 0.14020700
+Sort= 0 Array_size = 2048 Repeat= 100000 Sum= 19647200000 Time_avg= 0.00000298 Time_total= 0.29842500
+Sort= 0 Array_size = 4096 Repeat= 100000 Sum= 39862200000 Time_avg= 0.00001276 Time_total= 1.27562900
+Sort= 0 Array_size = 8192 Repeat= 100000 Sum= 78091200000 Time_avg= 0.00003354 Time_total= 3.35407400
+Sort= 0 Array_size = 16384 Repeat= 100000 Sum= 155910600000 Time_avg= 0.00007414 Time_total= 7.41406800
+Sort= 0 Array_size = 32768 Repeat= 100000 Sum= 311278700000 Time_avg= 0.00015536 Time_total= 15.53562200
+
+Normal Branch Prediction with Sorting
+Sort= 1 Array_size = 32 Repeat= 100000 Sum= 292300000 Time_avg= 0.00000004 Time_total= 0.00414000
+Sort= 1 Array_size = 64 Repeat= 100000 Sum= 614300000 Time_avg= 0.00000009 Time_total= 0.00851300
+Sort= 1 Array_size = 128 Repeat= 100000 Sum= 1313100000 Time_avg= 0.00000019 Time_total= 0.01854200
+Sort= 1 Array_size = 256 Repeat= 100000 Sum= 2622000000 Time_avg= 0.00000035 Time_total= 0.03543400
+Sort= 1 Array_size = 512 Repeat= 100000 Sum= 5080100000 Time_avg= 0.00000069 Time_total= 0.06890100
+Sort= 1 Array_size = 1024 Repeat= 100000 Sum= 9912100000 Time_avg= 0.00000139 Time_total= 0.13866300
+Sort= 1 Array_size = 2048 Repeat= 100000 Sum= 19647200000 Time_avg= 0.00000263 Time_total= 0.26270700
+Sort= 1 Array_size = 4096 Repeat= 100000 Sum= 39862200000 Time_avg= 0.00000515 Time_total= 0.51455100
+Sort= 1 Array_size = 8192 Repeat= 100000 Sum= 78091200000 Time_avg= 0.00001010 Time_total= 1.00986200
+Sort= 1 Array_size = 16384 Repeat= 100000 Sum= 155910600000 Time_avg= 0.00002018 Time_total= 2.01830600
+Sort= 1 Array_size = 32768 Repeat= 100000 Sum= 311278700000 Time_avg= 0.00004079 Time_total= 4.07894200
+
+
+Optimized Branch Prediction without Sorting
+Sort= 0 Array_size = 32 Repeat= 100000 Sum= 292300000 Time_avg= 0.00000001 Time_total= 0.00137800
+Sort= 0 Array_size = 64 Repeat= 100000 Sum= 614300000 Time_avg= 0.00000003 Time_total= 0.00263200
+Sort= 0 Array_size = 128 Repeat= 100000 Sum= 1313100000 Time_avg= 0.00000006 Time_total= 0.00593800
+Sort= 0 Array_size = 256 Repeat= 100000 Sum= 2622000000 Time_avg= 0.00000011 Time_total= 0.01124300
+Sort= 0 Array_size = 512 Repeat= 100000 Sum= 5080100000 Time_avg= 0.00000023 Time_total= 0.02283500
+Sort= 0 Array_size = 1024 Repeat= 100000 Sum= 9912100000 Time_avg= 0.00000047 Time_total= 0.04695700
+Sort= 0 Array_size = 2048 Repeat= 100000 Sum= 19647200000 Time_avg= 0.00000092 Time_total= 0.09223000
+Sort= 0 Array_size = 4096 Repeat= 100000 Sum= 39862200000 Time_avg= 0.00000185 Time_total= 0.18476800
+Sort= 0 Array_size = 8192 Repeat= 100000 Sum= 78091200000 Time_avg= 0.00000346 Time_total= 0.34558400
+Sort= 0 Array_size = 16384 Repeat= 100000 Sum= 155910600000 Time_avg= 0.00000672 Time_total= 0.67216300
+Sort= 0 Array_size = 32768 Repeat= 100000 Sum= 311278700000 Time_avg= 0.00001349 Time_total= 1.34885700
+
+Optimized Branch Prediction with Sorting
+Sort= 1 Array_size = 32 Repeat= 100000 Sum= 292300000 Time_avg= 0.00000001 Time_total= 0.00138700
+Sort= 1 Array_size = 64 Repeat= 100000 Sum= 614300000 Time_avg= 0.00000003 Time_total= 0.00265700
+Sort= 1 Array_size = 128 Repeat= 100000 Sum= 1313100000 Time_avg= 0.00000006 Time_total= 0.00585900
+Sort= 1 Array_size = 256 Repeat= 100000 Sum= 2622000000 Time_avg= 0.00000012 Time_total= 0.01163900
+Sort= 1 Array_size = 512 Repeat= 100000 Sum= 5080100000 Time_avg= 0.00000023 Time_total= 0.02270400
+Sort= 1 Array_size = 1024 Repeat= 100000 Sum= 9912100000 Time_avg= 0.00000044 Time_total= 0.04409000
+Sort= 1 Array_size = 2048 Repeat= 100000 Sum= 19647200000 Time_avg= 0.00000092 Time_total= 0.09184900
+Sort= 1 Array_size = 4096 Repeat= 100000 Sum= 39862200000 Time_avg= 0.00000180 Time_total= 0.18030400
+Sort= 1 Array_size = 8192 Repeat= 100000 Sum= 78091200000 Time_avg= 0.00000346 Time_total= 0.34593400
+Sort= 1 Array_size = 16384 Repeat= 100000 Sum= 155910600000 Time_avg= 0.00000676 Time_total= 0.67609600
+Sort= 1 Array_size = 32768 Repeat= 100000 Sum= 311278700000 Time_avg= 0.00001341 Time_total= 1.34096500
