@@ -1,26 +1,28 @@
 #include <algorithm>
 #include <ctime>
 #include <iostream>
+#include <random>
 
 using namespace std;
 
+
 int main(int argc, char* argv[])
 {
-    bool do_sort = true;
-    int REPEAT;
+    int seed             = 0;
+    int MAX_VAL_IN_ARRAY = 256;
+    int REPEAT           = 1000;
+    bool do_sort         = true;
+
+    std::mt19937_64 dre(seed);
+    uniform_int_distribution<int> dist(0, MAX_VAL_IN_ARRAY-1);
 
     // =========================================================================
     // Command Line Arguments
     // =========================================================================
-    if (argc < 3)
-    {
-        // Only two arguments
-        REPEAT = 1000;
-    }
-    else
+    if (argc >= 3)
         REPEAT = atoi(argv[2]);
 
-    if (argc > 1)
+    if (argc >= 2)
     {        
         if (atoi(argv[1]) == 1)
             do_sort = true;
@@ -36,7 +38,8 @@ int main(int argc, char* argv[])
     int data[arraySize];
 
     for (unsigned c = 0; c < arraySize; ++c)
-        data[c] = rand() % 256;
+        //data[c] = rand() % MAX_VAL_IN_ARRAY;
+        data[c] = dist(dre);
 
     if (do_sort)    
         // !!! With this, the next loop runs faster.
@@ -58,5 +61,5 @@ int main(int argc, char* argv[])
 
     double elapsedTime = static_cast<double>(clock()-start) / CLOCKS_PER_SEC;
 
-    cout << " Sum= " << sum << " Elapsed Time: Avg= " << elapsedTime/REPEAT << " Total= " << elapsedTime << "\n";
+    cout << "Sum= " << sum << " Elapsed Time: Avg= " << elapsedTime/REPEAT << " Total= " << elapsedTime << "\n";
 }
