@@ -25,3 +25,14 @@ Other platforms have not been tested.
 3. [Module basics](https://wiki.hpcc.msu.edu/display/ITH/Common+Module+Commands)
 4. [HPCC Tutorial Series](https://wiki.hpcc.msu.edu/display/ITH/HPC+Tutorial+Series)
 5. [HPCC Video Series](https://wiki.hpcc.msu.edu/display/TEAC/HPCC+video+tutorials)
+
+
+### Lectures
+
+Date       | W/D | Pre-class Slides| Video  |Book | Submit | In-class Topics | Slides    | Homework 
+--------   |--   | ----------------|--------|-----|--------|-----------------| ----------| -----
+02-09-2021 | 0/1 |                 |        |     |        | Introduction, Logistics | [Intro](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week0/Day0-slides.pdf)
+07-09-2021 | 1/1 | [Pointers](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week1/ptrs.pdf)|| | [PointerCode](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week1/ptr.cpp)| HPCC Usage |
+09-09-2021 | 1/2 | | [CPU](https://www.youtube.com/watch?v=o_WXTRS2qTY) | 1.2 | Exer 1.1 | Branching | | [HW1](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw1) Released
+14-09-2021 | 2/1 | [C-arrays](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week2/c-arrays.pdf), [2D-arrays](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week2/2Darray.pdf) | [Cache](https://www.youtube.com/watch?v=TV6AtNbmLBE), [VM](https://www.youtube.com/watch?v=muLn57VrGAA) | 1.3-1.4| Exer 1.12 | Cache | [Cache](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week2/Day3-cache.pdf)
+16-09-2021 | 2/2 | [Roofline](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week2/Day4-theory.pdf) | | 1.6, 1.7.1- 1.7.4, 2.1- 2.5 | Exer 1.18, 2.3, 2.10, 2.16 ||| [HW2](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw2) Released
