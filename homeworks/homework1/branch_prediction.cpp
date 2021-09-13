@@ -9,6 +9,7 @@
 #include <iostream>
 #include <random>
 #include <iomanip>
+#include <chrono>
 
 using namespace std;
 
@@ -64,7 +65,10 @@ int main(int argc, char* argv[])
     // =========================================================================
     // Time now
     // =========================================================================
-    clock_t start = clock();
+    // clock_t start = clock();
+    using duration = chrono::milliseconds;
+    auto t1        = chrono::steady_clock::now();
+
     long long sum = 0;
     for (unsigned i = 0; i < repeat; ++i)
     {
@@ -75,10 +79,13 @@ int main(int argc, char* argv[])
         }
     }
 
+    // double elapsedTime = static_cast<double>(clock()-start) / CLOCKS_PER_SEC;
+    auto t2            = chrono::steady_clock::now();
+    double elapsedTime = chrono::duration_cast<duration>(t2-t1).count();
+
     // Delete the dynamic array
     delete [] data;
 
-    double elapsedTime = static_cast<double>(clock()-start) / CLOCKS_PER_SEC;
 
     cout << "Sort= " << do_sort << " Array_size = " << array_size << " " << "Repeat= " << repeat << " ";
     cout.setf(ios::fixed);
