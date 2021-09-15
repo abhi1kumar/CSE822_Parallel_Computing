@@ -1,0 +1,28 @@
+Exercise 1.17
+Consider the following code, and assume that nvectors is small compared to
+the cache size, and length large.
+    for (k=0; k<nvectors; k++)
+        for (i=0; i<length; i++)
+            a[k,i] = b[i] * c[k]
+How do the following concepts relate to the performance of this code:
+• Reuse
+• Cache size
+• Associativity
+Would the following code where the loops are exchanged perform better or worse, and
+why?
+    for (i=0; i<length; i++)
+        for (k=0; k<nvectors; k++)
+            a[k,i] = b[i] * c[k]
+
+
+Assuming data is stored in row major form. Assume c = cache size
+
+The first code will cache b[i] upto c and then it will have to reload b into cache for each k.
+Writing to a is cached as loading a[k] loads a[k,0] to a[k,c]
+Total cache page loading required = nvectors * [l/c] + nvectors * [l/c]
+
+The second code will cache b[i] upto c and then only do page reload once.
+However, writing requires to load a[k] fresh because it accesses a[k+1,0] after a[k,0]
+Total cache page loading required = [l/c] + length * nvectors * [l/c] 
+
+Clearly, the second code is going to be slower and therefore, perform worse.
