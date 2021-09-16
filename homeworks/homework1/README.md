@@ -10,6 +10,8 @@ With a larger or smaller array (try some different sizes, see if it matters).
 
 Turn in your code, and a brief write-up (in plain text or markdown) addressing the above questions and discussing your results. Your final write-up and code are due in one week, on 9/16.
 
+Abhinav Kumar, A126040809
+
 ### Requirements
 1. g++
 
