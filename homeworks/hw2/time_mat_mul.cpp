@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 {
     int seed             = 0;
     int MAX_VAL_IN_ARRAY = 256;
-    int PRECISION        = 8;
+    int PRECISION        = 3;
 
     int array_size       = 100;
     int repeat           = 100;
@@ -107,7 +107,15 @@ int main(int argc, char* argv[])
         total_elapsed_time += elapsed_time;
     }
 
-    cout << "Array_size = " << array_size << " " << "Repeat= " << repeat << " ";
+    double avg_flops      = 2*m*n*p;
+    double avg_mega_flops = avg_flops/1e+6;
+
+    double total_time_sec = total_elapsed_time/ 1e+3;
+    double avg_time       = total_elapsed_time/repeat;
+    double avg_time_sec   = avg_time / 1e+3;
+
+    cout << "N= " << array_size << " " << "Repeat= " << repeat << " Flops_avg= " << avg_flops << " ";
     cout.setf(ios::fixed);
-    cout << "Flops= " << 2*m*n*p << " Time_avg= " << setprecision(PRECISION) << total_elapsed_time/repeat << "ms Time_total= " << setprecision(PRECISION) << total_elapsed_time << "ms\n";
+    cout << " Time_avg= " << setprecision(PRECISION) << avg_time_sec << "s Time_total= " << setprecision(PRECISION) << total_time_sec << "s";
+    cout << " MFlops/s= " << avg_mega_flops / avg_time_sec << "\n";
 }
