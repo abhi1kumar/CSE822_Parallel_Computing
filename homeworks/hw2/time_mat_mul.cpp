@@ -25,7 +25,7 @@ double** get_2d_array(int row_count, int col_count)
     return a;
 }
 
-void matrix_mul(double** a, double** b, int m, int n, int p)
+double** matrix_mul(double** a, double** b, int m, int n, int p)
 {    
     double** output = get_2d_array(m, p);
     
@@ -41,6 +41,8 @@ void matrix_mul(double** a, double** b, int m, int n, int p)
             }
         }
     }
+
+    return output;
 }
 
 int main(int argc, char* argv[])
@@ -75,6 +77,7 @@ int main(int argc, char* argv[])
     // =========================================================================
     double** a      = get_2d_array(m, n);
     double** b      = get_2d_array(n, p);
+    double** output;
 
     double total_elapsed_time = 0;
 
@@ -99,7 +102,7 @@ int main(int argc, char* argv[])
         auto t1 = std::chrono::steady_clock::now();
             
         // Matrix Multiply
-        matrix_mul(a, b, m, n, p);
+        output = matrix_mul(a, b, m, n, p);
 
         // Time 
         auto t2             = std::chrono::steady_clock::now();
