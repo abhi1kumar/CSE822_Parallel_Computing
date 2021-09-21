@@ -1,5 +1,6 @@
-# Day 5 (In class): Matrix Multiplication
+# Day 5 (In class): Threads
 
+Abhinav Kumar, A61240809
 
 ### Requirements
 1. g++
