@@ -1,4 +1,4 @@
-# Homework 2: Matrix Multiplication Prediction
+# Homework 2: Matrix Multiplication
 
 With your group, write a program that multiplies two matrices together. See [Matrix Multiplication](http://mathworld.wolfram.com/MatrixMultiplication.html).
 
