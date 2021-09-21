@@ -2,9 +2,9 @@
 
 With your group, write a program that multiplies two matrices together. See [Matrix Multiplication](http://mathworld.wolfram.com/MatrixMultiplication.html).
 
-1. For a given matrix size ```N``, what is the total number of floating point operations performed by this operator?
+1. For a given matrix size `N`, what is the total number of floating point operations performed by this operator?
 
-2. Compute the performance in Mflop/s of the matrix-matrix multiply for N=100. Be sure to perform enough repeat calculations of the timing to overcome any statistical noise in the measurement.
+2. Compute the performance in Mflop/s of the matrix-matrix multiply for `N=100`. Be sure to perform enough repeat calculations of the timing to overcome any statistical noise in the measurement.
 
 3. For the system you are running on, determine the clock speed of the processor and the cache size/layout. On Linux the command ```lscpu``` can be helpful for this. Assuming that the processor is capable of one flop per clock cycle, how does the performance you measures in (3) compare to the theoretical peak performance of your system?
 
@@ -31,9 +31,19 @@ Results are in [output.log](output.log)
 It is `2N^3`
 
 2. **Performance in Mflop/s of the matrix-matrix multiply for `N=100`**
+It is `623.053`. We repeated it `100` times to remove the statistical noise.
 
+3. **Determine clock speed and the cache size/layout. How does performance compare with the theoretical peak performance.**
 
-3. **Is the “Primary Loop” faster if we pre-sort the array? If so, why, if not then speculate as to why not.**
-Not always. 
-When the code optimization is off, randomization makes the primary loop slow (sorting makes primary loop fast) because the branch prediction being useless. Reference: [answer](https://stackoverflow.com/a/11227902). 
-When the code optimization is on, the branch statement is converted to non-branch statement which makes the array faster.
+```bash
+CPU Speed Max:       4000MHz
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            8192K
+```
+Assuming one flop per sec, the peak CPU performance amounts to 4000 MFlops/s. Clearly, the speed achieves is less than the peak performance.
+
+4. **Plot performance with varying `N`**
+
+5. **Measured performance for multiple `N`’s compare to the peak. Are there any “features” in your plot? Explain them in the context of the hardware architecture of your system. Include in your write-up a description of your system’s architecture (processor, cache, etc.).**
