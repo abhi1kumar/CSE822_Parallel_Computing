@@ -52,7 +52,7 @@ L3 cache:            8192K
 Assuming one flop per sec, the peak CPU performance amounts to 4000 MFlops/s. Clearly, the speed achieves is less than the peak performance.
 
 4. **Plot performance with varying `N`**
-![GFlops vs N](gflops_vs_tot_elem.png?raw=true "Title")
+![GFlops vs N](output/gflops_vs_tot_elem.png?raw=true "Title")
 
 
 5. **Measured performance for multiple `N`’s compare to the peak. Are there any “features” in your plot? Explain them in the context of the hardware architecture of your system. Include in your write-up a description of your system’s architecture (processor, cache, etc.).**
