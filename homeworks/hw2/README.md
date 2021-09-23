@@ -56,4 +56,4 @@ Assuming one flop per sec, the peak CPU performance amounts to 4000 MFlops/s. Cl
 
 5. **Measured performance for multiple `N`’s compare to the peak. Are there any “features” in your plot? Explain them in the context of the hardware architecture of your system. Include in your write-up a description of your system’s architecture (processor, cache, etc.).**
 
-We see that GFlops performance is maximum at rows=`64` which corresponds to matrix size of `64x64`. The double data type corresponds to 8 bytes of storage and therefore, total size of the matrix `= 64 x 64 x 8` bytes `= 32` kB which is the cache size. Beyond this size, the optimal performance goes down.
+We see that GFlops performance is maximum at rows=`64` which corresponds to matrix size of `64x64`. The double data type corresponds to 8 bytes of storage and therefore, total size of the matrix `= 64 x 64 x 8` bytes `= 32` kB which is the L1d cache size. Beyond this size, the optimal performance goes down.
