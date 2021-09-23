@@ -1,8 +1,14 @@
 # Homework 2: Matrix Multiplication
 
+Group 4: 
+Abhinav Kumar
+Avrajit Ghosh
+Siddhant Gautam
+Trevor Fush
+
 With your group, write a program that multiplies two matrices together. See [Matrix Multiplication](http://mathworld.wolfram.com/MatrixMultiplication.html).
 
-1. For a given matrix size `N`, what is the total number of floating point operations performed by this operator?
+1. For a given matrix size `N` (which is number of rows times number of columns), what is the total number of floating point operations performed by this operator?
 
 2. Compute the performance in Mflop/s of the matrix-matrix multiply for `N=100`. Be sure to perform enough repeat calculations of the timing to overcome any statistical noise in the measurement.
 
@@ -45,5 +51,9 @@ L3 cache:            8192K
 Assuming one flop per sec, the peak CPU performance amounts to 4000 MFlops/s. Clearly, the speed achieves is less than the peak performance.
 
 4. **Plot performance with varying `N`**
+![GFlops vs N](gflops_vs_tot_elem.png?raw=true "Title")
+
 
 5. **Measured performance for multiple `N`’s compare to the peak. Are there any “features” in your plot? Explain them in the context of the hardware architecture of your system. Include in your write-up a description of your system’s architecture (processor, cache, etc.).**
+
+We see that GFlops performance is maximum at rows=`64` which corresponds to matrix size of `64x64`. The double data type corresponds to 8 bytes of storage and therefore, total size of the matrix `= 64 x 64 x 8` bytes `= 32` kB which is the cache size. Beyond this size, the optimal performance goes down.
