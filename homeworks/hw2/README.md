@@ -35,7 +35,7 @@ Results are in [output.log](output/output.log)
 
 ### Discussions
 1. **Total number of floating point operations performed by this operator**
-It is `2N^3`
+It is `2R^3` where `R= sqrt(N)` is the number of rows of the matrix.
 
 2. **Performance in Mflop/s of the matrix-matrix multiply for `N=100`**
 It is `623.053`. We repeated it `100` times to remove the statistical noise.
