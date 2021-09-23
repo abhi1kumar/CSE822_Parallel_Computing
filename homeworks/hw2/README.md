@@ -1,10 +1,10 @@
 # Homework 2: Matrix Multiplication
 
 Group 4: 
-Abhinav Kumar
-Avrajit Ghosh
-Siddhant Gautam
-Trevor Fush
+- Abhinav Kumar
+- Avrajit Ghosh
+- Siddhant Gautam
+- Trevor Fush
 
 With your group, write a program that multiplies two matrices together. See [Matrix Multiplication](http://mathworld.wolfram.com/MatrixMultiplication.html).
 
@@ -21,6 +21,7 @@ With your group, write a program that multiplies two matrices together. See [Mat
 
 ### Requirements
 1. g++
+2. python3
 
 ### Compilation and Running
 Navigate to the current directory and then run
