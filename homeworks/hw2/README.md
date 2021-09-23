@@ -31,7 +31,7 @@ chmod +x main.sh
 ```
 
 ### Results 
-Results are in [output.log](output.log)
+Results are in [output.log](output/output.log)
 
 ### Discussions
 1. **Total number of floating point operations performed by this operator**
