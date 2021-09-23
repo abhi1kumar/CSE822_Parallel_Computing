@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
     int PRECISION        = 3;
 
     int array_size       = 100;
-    int repeat           = 100;
+    int repeat           = 10;
 
     std::mt19937_64 dre(seed);
     uniform_int_distribution<int> dist(0, MAX_VAL_IN_ARRAY-1);    
@@ -68,9 +68,9 @@ int main(int argc, char* argv[])
         array_size = atoi(argv[1]);
 
     // rows and cols both same as array size
-    int m = array_size;
-    int n = array_size;
-    int p = array_size;
+    long int m = array_size;
+    long int n = array_size;
+    long int p = array_size;
 
     // =========================================================================
     // Array Declaration
@@ -110,8 +110,8 @@ int main(int argc, char* argv[])
         total_elapsed_time += elapsed_time;
     }
 
-    double avg_flops      = 2*m*n*p;
-    double avg_mega_flops = avg_flops/1e+6;
+    long double avg_flops      = 2*m*n*p;
+    long double avg_mega_flops = avg_flops/1e+6;
 
     double total_time_sec = total_elapsed_time/ 1e+3;
     double avg_time       = total_elapsed_time/repeat;
