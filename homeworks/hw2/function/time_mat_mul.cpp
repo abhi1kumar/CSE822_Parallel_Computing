@@ -1,6 +1,6 @@
 /*
     Sample Run:
-    ./a.out array_size repeat
+    ./a.out row_size repeat
     ./a.out 32768 1000
 */
 
@@ -49,14 +49,14 @@ int main(int argc, char* argv[])
 {
     int seed             = 0;
     int MAX_VAL_IN_ARRAY = 256;
-    int PRECISION        = 3;
+    int PRECISION        = 8;
 
-    int array_size       = 100;
+    int row_size       = 100; // This is number of rows
     int repeat           = 10;
 
     std::mt19937_64 dre(seed);
     uniform_int_distribution<int> dist(0, MAX_VAL_IN_ARRAY-1);    
-    using duration = std::chrono::milliseconds; 
+    using duration = std::chrono::nanoseconds; 
 
     // =========================================================================
     // Command Line Arguments
@@ -65,12 +65,12 @@ int main(int argc, char* argv[])
         repeat = atoi(argv[2]);
 
     if (argc >= 2)
-        array_size = atoi(argv[1]);
+        row_size = atoi(argv[1]);
 
     // rows and cols both same as array size
-    long int m = array_size;
-    long int n = array_size;
-    long int p = array_size;
+    long int m = row_size;
+    long int n = row_size;
+    long int p = row_size;
 
     // =========================================================================
     // Array Declaration
@@ -111,14 +111,14 @@ int main(int argc, char* argv[])
     }
 
     long double avg_flops      = 2*m*n*p;
-    long double avg_mega_flops = avg_flops/1e+6;
+    long double avg_giga_flops = avg_flops/1e+9;
 
-    double total_time_sec = total_elapsed_time/ 1e+3;
+    double total_time_sec = total_elapsed_time/ 1e+9;
     double avg_time       = total_elapsed_time/repeat;
-    double avg_time_sec   = avg_time / 1e+3;
+    double avg_time_sec   = avg_time / 1e+9;
 
-    cout << "N= " << array_size << " " << "Repeat= " << repeat << " Flops_avg= " << avg_flops << " ";
+    cout << "R= " << row_size << " N= " << row_size*row_size <<" " << "Repeat= " << repeat << " Flops_avg= " << avg_flops << " ";
     cout.setf(ios::fixed);
     cout << " Time_avg= " << setprecision(PRECISION) << avg_time_sec << "s Time_total= " << setprecision(PRECISION) << total_time_sec << "s";
-    cout << " MFlops/s= " << avg_mega_flops / avg_time_sec << "\n";
+    cout << " GFlops/s= " << avg_giga_flops / avg_time_sec << "\n";
 }
