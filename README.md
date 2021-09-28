@@ -30,6 +30,7 @@ Date  | W/D | Pre-class Slides| Video  |Book | Submit | In-class Topics | Slides
 16-09 | [2/4](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week2/Day4) |  | | 1.6, 1.7.1- 1.7.4, 2.1- 2.5 | Exer 1.18, 2.3, 2.10, 2.16 |Arithmetic Intensity, Amdahl Law, Scalability |[Roofline](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week2/Day4-theory.pdf) | [HW2](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw2) Released
 21-09 | [3/5](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week3/Day5) | [Command line args](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week3/commandLineArgs.pdf) | [Concurrency](https://www.youtube.com/watch?v=F6Ipn7gCOsY&t=415s) till 12:30 | | Effect of `.join`| Threads | [Threads1](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week3/threads1.pdf)
 23-09 | [3/6](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week3/Day6) | | [Thread](https://www.youtube.com/watch?v=F6Ipn7gCOsY&t=415s) till 12:30 to 28:30 || `.join`/`.detach`, copy/move | Threads 2 | [Threads2](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week3/threads2.pdf) | [HW3](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw3) Released
+27-09 | [4/7](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Day7) | | | |Avoid race, deadlock, detect race | Concurrency | [Concurrency](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Concurrency1.pdf) |
 
 ### HPCC Stuff
 1. [HPCC Access](https://wiki.hpcc.msu.edu/display/ITH/How+to+Access+HPCC)
