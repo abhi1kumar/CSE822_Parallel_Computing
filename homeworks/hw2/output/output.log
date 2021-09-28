@@ -12,7 +12,7 @@ L1i cache:           32K
 L2 cache:            256K
 L3 cache:            12288K
 
-R= 10 N= 100 Repeat= 30 Flops_avg= 2000  Time_avg= 0.00000375s Time_total= 0.00011248s GFlops/s= 0.53342817
+R= 10 N= 100 Repeat= 30 Flops_avg= 2000  Time_avg= 0.00000375s Time_total= 0.00011248s GFlops/s= 0.623052817
 R= 32 N= 1024 Repeat= 30 Flops_avg= 65536  Time_avg= 0.00010291s Time_total= 0.00308722s GFlops/s= 0.63684501
 R= 64 N= 4096 Repeat= 30 Flops_avg= 524288  Time_avg= 0.00082837s Time_total= 0.02485118s GFlops/s= 0.63291318
 R= 128 N= 16384 Repeat= 30 Flops_avg= 4.1943e+06  Time_avg= 0.00668787s Time_total= 0.20063620s GFlops/s= 0.62715064
