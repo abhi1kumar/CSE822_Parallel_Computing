@@ -33,6 +33,28 @@ Date  | Wk/Day | Pre-class Slides| Video  |Book | Submit | In-class Topics | Sli
 27-09 | [4/7](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Day7) | | | |Avoid race, deadlock, detect race | Concurrency1 | [Concurrency1](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Concurrency1.pdf) |
 29-09 | [4/8](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Day8) | | [Concurrency](https://www.youtube.com/watch?v=F6Ipn7gCOsY) from 28:30 | | | Concurrency2 | [Concurrency2](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Concurrency2.pdf) | [HW4](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw4) Released
 
+### Debugging Segmentation Fault
+
+1. [gdb](https://stackoverflow.com/a/3719031)
+
+- Compile your application with `-g`, then you'll have debug symbols in the binary file.
+```bash
+g++ -g cpp_file.cpp -o binary.o
+```
+- Use `gdb` to open the `gdb` console.
+- Type 
+```bash 
+file binary.o
+```
+- Type 
+```bash
+run argument1 argument2
+``` 
+- Do something to cause a Segmentation Fault.
+- Type `bt` to get a stack trace of the Segmentation Fault.
+
+
+
 ### HPCC Stuff
 1. [HPCC Access](https://wiki.hpcc.msu.edu/display/ITH/How+to+Access+HPCC)
 2. [SLURM scheduling](https://wiki.hpcc.msu.edu/display/ITH/Job+Scheduling+by+SLURM) and [SLURM job management](https://wiki.hpcc.msu.edu/display/ITH/Job+Management+by+SLURM)
