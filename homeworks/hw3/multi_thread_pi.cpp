@@ -17,10 +17,10 @@ using std::atoi;
 using duration = std::chrono::nanoseconds;
 
 #include<vector>
-vector <long int> Nin_per_thread;
-vector <double>   time_per_thread;
 
-int get_Nin_per_thread(long int Npoints, int seed, int thread_int_id)
+int THREAD_THRESH = 5;
+
+void get_Nin_per_thread(int Npoints, int seed, int thread_int_id, vector<int>& Nin_per_thread, vector<double>& time_per_thread)
 {
     /*
     Function to randomly sample points from a square of side length 1,
@@ -30,14 +30,14 @@ int get_Nin_per_thread(long int Npoints, int seed, int thread_int_id)
     std::mt19937_64 dre(seed);
     std::uniform_real_distribution<double> dist(0, 1);
 
-    long int N_in = 0;
+    int N_in = 0;
     double x;
     double y;
     
     // Time Declare
     auto t1 = std::chrono::steady_clock::now();
 
-    for (long int i=0; i<Npoints; ++i) 
+    for (int i=0; i<Npoints; ++i) 
     {
         x = dist(dre);
         y = dist(dre);
@@ -49,15 +49,14 @@ int get_Nin_per_thread(long int Npoints, int seed, int thread_int_id)
     // Time
     auto t2             = std::chrono::steady_clock::now();
     double elapsed_time = std::chrono::duration_cast<duration>(t2-t1).count();
-    time_per_thread.insert(time_per_thread.begin() +  thread_int_id, elapsed_time);
-
-    Nin_per_thread.insert(Nin_per_thread.begin()  + thread_int_id, N_in);
+    time_per_thread[thread_int_id] = elapsed_time;
+    Nin_per_thread [thread_int_id]  = N_in;
 }
 
 int main(int argc, char* argv[]) {
 
     cout.precision(15);
-    long int N_total = 10000;
+    int N_total = 10000;
     int num_thread   = 1;
     int seed         = 0;
 
@@ -73,16 +72,18 @@ int main(int argc, char* argv[]) {
     // =========================================================================
     // Load assignment for each thread
     // =========================================================================
-    long int avg_N_point_per_thread = int(N_total/num_thread);
-    long int extra_N_point          = N_total % num_thread;
-    long int N_point_curr;
+    int avg_N_point_per_thread = int(N_total/num_thread);
+    int extra_N_point          = N_total % num_thread;
+    int N_point_curr;
 
-    vector <thread> threads; 
+    vector <thread> threads;
+    vector<int>Nin_per_thread(num_thread);
+    vector<double>time_per_thread(num_thread);
 
     for (int id=0; id < num_thread; ++id)
     {
-        Nin_per_thread .insert(Nin_per_thread.begin()  + id, 0);
-        time_per_thread.insert(time_per_thread.begin() + id, 0.0);
+        Nin_per_thread [id] = 0;
+        time_per_thread[id] = 0.0;
 
         // If the N_total number is not perfectly divisible, add extra to the last one
         if (id == num_thread-1)
@@ -90,9 +91,10 @@ int main(int argc, char* argv[]) {
         else
             N_point_curr = avg_N_point_per_thread;
 
+        if (num_thread < THREAD_THRESH)
+            cout << "Started= "<< id << " with " << N_point_curr << " points" << endl;
         // Start a thread
-        cout << "Starting: "<< id << " with " << N_point_curr << " points" << endl;
-        threads.emplace_back(get_Nin_per_thread, N_point_curr, seed, id);
+        threads.emplace_back(get_Nin_per_thread, N_point_curr, seed + id, id, std::ref(Nin_per_thread), std::ref(time_per_thread) );
     }
 
     // =========================================================================
@@ -105,7 +107,8 @@ int main(int argc, char* argv[]) {
         if(t.joinable() )
         {
         	t.join();
-            cout << "Joined: "<< id << " Time: " << time_per_thread[id]/1e+6 << " ms" << endl;
+            if (num_thread < THREAD_THRESH)
+                cout << "Joined = "<< id << " Time(ms)= " << time_per_thread[id]/1e+6 << endl;
             ++id;
         }
     }
@@ -114,14 +117,22 @@ int main(int argc, char* argv[]) {
     // Final Pi calculation
     // =========================================================================
     long double pi;
-    long int N_in_sum = 0;
+    int N_in_sum = 0;
+    double time_per_thread_sum = 0.0;
+    double time_per_thread_avg = 0.0;
 
     for (int id= 0; id < num_thread; ++id)
-        N_in_sum  += Nin_per_thread[id];
+    {
+        N_in_sum            += Nin_per_thread [id];
+        time_per_thread_sum += (double)(time_per_thread[id]/1e+6);
+    }
 
-    pi = 4.0 * (long double)N_in_sum/(long double)N_total;
+    pi                  = 4.0 * (long double)N_in_sum/(long double)N_total;
+    time_per_thread_avg = (double)(time_per_thread_sum/num_thread);
 
-    cout << "After " << N_total << " iterations, calculated value of pi = " << pi << endl;
+    cout << "N_total= " << N_total << " pi= " << pi << " num_threads= " << num_thread << " time_per_thread_avg(ms)= " << time_per_thread_avg << endl;
+    if (num_thread < THREAD_THRESH)
+        cout << endl;
 
     return 0;
 

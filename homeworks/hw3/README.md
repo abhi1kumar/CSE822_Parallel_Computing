@@ -25,10 +25,12 @@ Again, remember that to get anything resembling an accurate `π` you are going t
 Navigate to the current directory and then run
 ```bash
 chmod +x main.sh
-./main.sh | tee output.log
+./main.sh | tee output/output.log
 ```
 
+
 ### Results 
+Results are in [output.log](output/output.log)
 
 1. **Outline**
 
@@ -45,3 +47,7 @@ Parallel Version
   - Use `N_in` and `N_tot` to get the final version of `π`
        
 4. **Cores in the System and Plot of per-thread time of various thread counts**
+
+The cores in the system is 120 and we ran it for 2048 threads.
+
+![Per-thread time vs Thread Count](output/per_thread_time_vs_thread_time.png?raw=true "Title")
