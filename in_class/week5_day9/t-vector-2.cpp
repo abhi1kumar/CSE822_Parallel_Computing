@@ -2,9 +2,14 @@
 using std::cout; using std::endl;
 #include<vector>
 using std::vector;
+
+#include<cstdlib>
+
 #include<thread>
 using std::thread;
-#include<cstdlib>
+
+#include<future>
+using std::future; using std::async;
 
 /*
 void t_function(int id, vector<int>& results){
@@ -38,6 +43,13 @@ int main (int argc, char *argv[]){
   } // of else
 }
 */
+
+int t_function(int id)
+{
+    return id * id;
+}
+
+
 int main (int argc, char *argv[])
 {
     if (argc != 2)
@@ -46,6 +58,24 @@ int main (int argc, char *argv[])
     {
         int t_cnt = atoi(argv[1]);
 
+        vector<future<int> > f;
+        
+        for(int id=0; id< t_cnt; ++id)
+        {
+            f.push_back(async(std::launch::async, t_function, id));
+            cout << "Started= "<< id << endl;
+        }
+
+        long res = 0;    
+        int id = 0;
+        for(auto &fut : f)
+        {
+            res += fut.get();    
+        	cout << "Joined = "<< id++ << endl;
+        }
+        cout << "Result = "<< res << endl;
+
     }
+
     return 0;
 }

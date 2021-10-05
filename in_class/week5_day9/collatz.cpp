@@ -36,7 +36,7 @@ long collatz_len(long start, long stop){
 
 int main (){
   vector<future<long> > f;
-  long start=1, len=10'000'000;
+  long start=1, len=10000000;
   auto t1 = std::chrono::steady_clock::now();
   for(int i=0; i<8; ++i){
     f.push_back(async(std::launch::async, collatz_len, start, start+len));
