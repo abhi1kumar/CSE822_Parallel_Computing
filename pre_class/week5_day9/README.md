@@ -6,6 +6,7 @@ Abhinav Kumar, A61240809
 
 
 1. **What’s the default launch flag for an `async` function template?**
+
 The function template can behave either of the two flags /policies . In other words, it behaves the same as `async(std::launch::async | std::launch::deferred, f, args...)`. In other words, `f` may be executed in another thread or it may be run synchronously when the resulting `std::future` is queried for a value.
 
 Reference: [Async reference](https://en.cppreference.com/w/cpp/thread/async)
