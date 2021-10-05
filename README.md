@@ -32,6 +32,8 @@ Date  | Wk/Day | Pre-class Slides| Video  |Book | Submit | In-class Topics | Sli
 23-09 | [3/6](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week3/Day6) | | [Thread](https://www.youtube.com/watch?v=F6Ipn7gCOsY&t=415s) 12:30 to 28:30 || `.join`/`.detach`, copy/move | Threads2 | [Threads2](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week3/threads2.pdf) | [HW3](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw3) Released
 27-09 | [4/7](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Day7) | | | |Avoid race, deadlock, detect race | Concurrency1 | [Concurrency1](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Concurrency1.pdf) |
 29-09 | [4/8](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Day8) | | [Concurrency](https://www.youtube.com/watch?v=F6Ipn7gCOsY) from 28:30 | | | Concurrency2 | [Concurrency2](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week4/Concurrency2.pdf) | [HW4](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw4) Released
+05-10 | [5/9](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week5/Day9) | | | | `async` default, `future` advantages | OpenMP | [Tasks](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week5/task_parallelism.pdf) | |
+07-10 | [5/10](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week5/Day10) | | [OpenMP Intro](https://www.youtube.com/watch?v=x0HkbIuJILk),[False sharing example](https://www.youtube.com/watch?v=OuzYICZUthM) | Chap 17 | Exer 17.3 | OpenMP | [OpenMP](https://msu-cmse-courses.github.io/cmse822-FS21/Weekly/Week5/OpenMP1.pdf) | [HW5](https://msu-cmse-courses.github.io/cmse822-FS21/assignments/hw5) Released | 
 
 ### Debugging Segmentation Fault
 
