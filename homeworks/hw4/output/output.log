@@ -1,0 +1,22 @@
+Cash Deposited to ID:1=50
+Updated amount[1]=150
+Cash Deposited to ID:2=50
+Updated amount[2]=150
+Cash Deposited to ID:3=50
+Updated amount[3]=150
+Cash Deposited to ID:3=50
+Updated amount[3]=200
+Cash Deposited to ID:2=50
+Updated amount[2]=200
+Cash Deposited to ID:1=50
+Updated amount[1]=200
+Cash Withdrawn by ID=3=102
+Updated amount[3]=98
+Cash Withdrawn by ID=2=101
+Updated amount[2]=99
+Cash Withdrawn by ID=1=100
+Updated amount[1]=100
+Cash Withdrawn by ID=1=100
+Updated amount[1]=0
+Cannot withdraw more money by [2]
+Cannot withdraw more money by [3]
