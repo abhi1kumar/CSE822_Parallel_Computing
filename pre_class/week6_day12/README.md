@@ -8,7 +8,7 @@ Abhinav Kumar, A61240809
 Here is a table comparing the three approaches
 
 Method | Operations Supported | Locks Needed |Overhead
--------|------------------|------------ -----|--------
+-------|------------------|-----------------|--------
 Critical Section | Arbitrary Block | Yes | Big
 Reduction for    | Arbitrary for   | Yes | Big
 Atomic           | Limited         | No  | Small
