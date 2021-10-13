@@ -12,13 +12,15 @@ void f()
 {
     int t_cnt         = omp_get_num_threads();
     int thread_int_id = omp_get_thread_num();
-    
-    #pragma omp for
-    for (int i=0; i< 2; ++i)
+
+    #pragma omp parallel for
     {
-        stringstream s;
-        s << "Hello Thread= " << thread_int_id << " Index= " << i << endl;
-        cout << s.str();
+        for (int i=0; i< 2; ++i)
+        {
+            stringstream s;
+            s << "Hello Thread= " << thread_int_id << " Index= " << i << endl;
+            cout << s.str();
+        }
     }
 }
 
