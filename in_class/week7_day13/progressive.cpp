@@ -18,14 +18,38 @@ int main (int argc, char* argv[]){
   else {
     int t_cnt = atoi(argv[1]);
     int iters = atoi(argv[2]);
-    double result = 0.0;
-    
-    double t1 = omp_get_wtime();
-# pragma omp parallel for num_threads(t_cnt) reduction(+: result)
+
+    int chunk = 2;
+    int repeat = 10;
+
+    double result, t1, t2;
+
+
+    result = 0.0;
+    t1 = omp_get_wtime();
+# pragma omp parallel for schedule (static, chunk) num_threads(t_cnt) reduction(+: result)
     for(int i=0; i<iters; ++i)
 	  result  += f(i);
-    double t2 = omp_get_wtime();
+    t2 = omp_get_wtime();
+    cout << "Num_threads= " << t_cnt << " Iterations= " << iters << " Chunk= " << chunk << " Elapsed= " << t2-t1 << endl;
 
-    cout << "Elapsed: " << t2-t1 << endl;
+
+    result = 0.0;
+    t1 = omp_get_wtime();
+# pragma omp parallel for schedule (dynamic, chunk) num_threads(t_cnt) reduction(+: result)
+    for(int i=0; i<iters; ++i)
+	  result  += f(i);
+    t2 = omp_get_wtime();
+    cout << "Num_threads= " << t_cnt << " Iterations= " << iters << " Chunk= " << chunk << " Elapsed= " << t2-t1 << endl;
+
+    result = 0.0;
+    t1 = omp_get_wtime();
+# pragma omp parallel for schedule (guided, chunk) num_threads(t_cnt) reduction(+: result)
+    for(int i=0; i<iters; ++i)
+	  result  += f(i);
+    t2 = omp_get_wtime();
+    cout << "Num_threads= " << t_cnt << " Iterations= " << iters << " Chunk= " << chunk << " Elapsed= " << t2-t1 << endl;
+
+
    }
 }
