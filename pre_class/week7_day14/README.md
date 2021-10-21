@@ -10,5 +10,5 @@ Abhinav Kumar, A61240809
 Navigate to the current directory and then run
 ```bash
 chmod +x main.sh
-./main
+./main.sh
 ```
