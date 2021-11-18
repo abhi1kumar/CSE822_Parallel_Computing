@@ -13,7 +13,8 @@
 module load GCC/6.4.0-2.28 OpenMPI  ### load necessary modules.
  
 cd /mnt/home/kumarab6/courses/CSE822_Parallel_Computing/in_class/week1_day1                   ### change to the directory where your code is located.
- 
+
+srun -n 1 g++ hello_hpcc.cpp 
 srun -n 1 a.out        ### call your executable. (use srun instead of mpirun.)
  
 scontrol show job $SLURM_JOB_ID     ### write job information to SLURM output file.
