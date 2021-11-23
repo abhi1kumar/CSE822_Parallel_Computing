@@ -1,0 +1,23 @@
+Date = Fri Nov 19 23:26:31 EST 2021
+Hostname = amr-089
+Working Directory = /mnt/home/fushstep/cmse822/CSE822_HW/homeworks/hw10
+
+Number of Nodes Allocated = 2
+Number of Tasks Allocated = 2
+Number of Cores/Task Allocated = 1
+
+===============================================================================
+Running Addition
+===============================================================================
+a_size = 4 b_size = 8 repeat = 5 time = 9.03687e-05
+a_size = 4 b_size = 16 repeat = 5 time = 7.02048e-05
+a_size = 4 b_size = 32 repeat = 5 time = 9.57336e-05
+a_size = 4 b_size = 64 repeat = 5 time = 0.000164603
+a_size = 4 b_size = 128 repeat = 5 time = 9.94885e-05
+a_size = 4 b_size = 256 repeat = 5 time = 8.79008e-05
+a_size = 4 b_size = 512 repeat = 5 time = 0.000123811
+a_size = 4 b_size = 1024 repeat = 5 time = 0.000118873
+a_size = 4 b_size = 2048 repeat = 5 time = 0.000173398
+a_size = 4 b_size = 4096 repeat = 5 time = 0.000270408
+a_size = 4 b_size = 8192 repeat = 5 time = 0.000474019
+Done!!

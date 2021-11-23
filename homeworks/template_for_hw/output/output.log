@@ -1,0 +1,15 @@
+Num_thread= 2 Num_point= 1 Range= [4,5] Vanilla_simpson_area= -7.64112 Parallel_simpson_area= -7.64112 Trapezoidal_rule_area= -11.6468 Vanilla_simpson_time= 1.10576e-05 Parallel_simpson_time= 7.0923e-06
+Num_thread= 2 Num_point= 2 Range= [4,5] Vanilla_simpson_area= -3.8966 Parallel_simpson_area= -3.8966 Trapezoidal_rule_area= -5.86291 Vanilla_simpson_time= 9.4935e-06 Parallel_simpson_time= 7.402e-06
+Num_thread= 2 Num_point= 4 Range= [4,5] Vanilla_simpson_area= -1.9516 Parallel_simpson_area= -1.9516 Trapezoidal_rule_area= -2.93145 Vanilla_simpson_time= 5.9255e-06 Parallel_simpson_time= 7.2278e-06
+Num_thread= 2 Num_point= 8 Range= [4,5] Vanilla_simpson_area= -3.90573 Parallel_simpson_area= -3.90573 Trapezoidal_rule_area= -4.39573 Vanilla_simpson_time= 1.35102e-05 Parallel_simpson_time= 7.3118e-06
+Num_thread= 2 Num_point= 16 Range= [4,5] Vanilla_simpson_area= -4.88442 Parallel_simpson_area= -4.88442 Trapezoidal_rule_area= -5.12944 Vanilla_simpson_time= 9.671e-06 Parallel_simpson_time= 7.4173e-06
+Num_thread= 2 Num_point= 32 Range= [4,5] Vanilla_simpson_area= -5.37414 Parallel_simpson_area= -5.37414 Trapezoidal_rule_area= -5.49666 Vanilla_simpson_time= 9.2537e-06 Parallel_simpson_time= 7.0836e-06
+Num_thread= 2 Num_point= 64 Range= [4,5] Vanilla_simpson_area= -5.6191 Parallel_simpson_area= -5.6191 Trapezoidal_rule_area= -5.68035 Vanilla_simpson_time= 9.7865e-06 Parallel_simpson_time= 7.2059e-06
+Num_thread= 2 Num_point= 128 Range= [4,5] Vanilla_simpson_area= -5.74159 Parallel_simpson_area= -5.74159 Trapezoidal_rule_area= -5.77222 Vanilla_simpson_time= 8.0382e-06 Parallel_simpson_time= 9.9546e-06
+Num_thread= 2 Num_point= 256 Range= [4,5] Vanilla_simpson_area= -5.80285 Parallel_simpson_area= -5.80285 Trapezoidal_rule_area= -5.81816 Vanilla_simpson_time= 1.25677e-05 Parallel_simpson_time= 9.4974e-06
+Num_thread= 2 Num_point= 512 Range= [4,5] Vanilla_simpson_area= -5.83348 Parallel_simpson_area= -5.83348 Trapezoidal_rule_area= -5.84113 Vanilla_simpson_time= 1.51762e-05 Parallel_simpson_time= 1.20339e-05
+Num_thread= 2 Num_point= 1024 Range= [4,5] Vanilla_simpson_area= -5.84879 Parallel_simpson_area= -5.84879 Trapezoidal_rule_area= -5.85262 Vanilla_simpson_time= 2.329e-05 Parallel_simpson_time= 1.97177e-05
+Num_thread= 2 Num_point= 2048 Range= [4,5] Vanilla_simpson_area= -5.85645 Parallel_simpson_area= -5.85645 Trapezoidal_rule_area= -5.85836 Vanilla_simpson_time= 3.89356e-05 Parallel_simpson_time= 3.37266e-05
+Num_thread= 2 Num_point= 4096 Range= [4,5] Vanilla_simpson_area= -5.86028 Parallel_simpson_area= -5.86028 Trapezoidal_rule_area= -5.86123 Vanilla_simpson_time= 6.30136e-05 Parallel_simpson_time= 5.34358e-05
+Num_thread= 2 Num_point= 8192 Range= [4,5] Vanilla_simpson_area= -5.86219 Parallel_simpson_area= -5.86219 Trapezoidal_rule_area= -5.86267 Vanilla_simpson_time= 0.000109297 Parallel_simpson_time= 0.000101097
+Num_thread= 2 Num_point= 16384 Range= [4,5] Vanilla_simpson_area= -5.86315 Parallel_simpson_area= -5.86315 Trapezoidal_rule_area= -5.86339 Vanilla_simpson_time= 0.000216637 Parallel_simpson_time= 0.000199481
