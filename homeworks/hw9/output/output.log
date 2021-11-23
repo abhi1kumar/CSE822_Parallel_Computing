@@ -1,0 +1,15 @@
+===============================================================================
+Running Programs
+===============================================================================
+Non-Blocking nLocal = 100 numRanks = 1 nGlobal = 100 time = 1.8128e-06
+Blocking     nLocal = 100 numRanks = 1 nGlobal = 100 time = 1.76179e-06
+Non-Blocking nLocal = 100 numRanks = 2 nGlobal = 200 time = 0.00017869
+Blocking     nLocal = 100 numRanks = 2 nGlobal = 200 time = 0.000105957
+Non-Blocking nLocal = 100 numRanks = 4 nGlobal = 400 time = 0.000322444
+Blocking     nLocal = 100 numRanks = 4 nGlobal = 400 time = 0.00177121
+Non-Blocking nLocal = 200 numRanks = 1 nGlobal = 200 time = 2.57124e-06
+Blocking     nLocal = 200 numRanks = 1 nGlobal = 200 time = 2.4826e-06
+Non-Blocking nLocal = 200 numRanks = 2 nGlobal = 400 time = 0.00115172
+Blocking     nLocal = 200 numRanks = 2 nGlobal = 400 time = 0.00123268
+Non-Blocking nLocal = 200 numRanks = 4 nGlobal = 800 time = 0.000236268
+Blocking     nLocal = 200 numRanks = 4 nGlobal = 800 time = 0.00119027

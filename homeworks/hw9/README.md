@@ -34,6 +34,30 @@ chmod +x main.sh
 Results are in [output.log](output/output.log)
 
 ### Discussions
-1. **Table that compares runs for 1, 2 and 4 processors for the original blocking and non-blocking code for various array sizes.**
+1. ** Design Plan**
+We will carry out the average of the stuff we have after the send. Once the ghost entries have been filled, we then average out the stuff containing ghost entries. 
+
+2. **Table that compares runs for 1, 2 and 4 processors for the original blocking and non-blocking code for various array sizes.**
+
+All times are in 10^-6 seconds
+
+Array Size per rank = 100
+
+  n | Non-Blocking | Non Blocking
+ --| -- | ---
+ 1 | 1.81 | 1.76
+ 2 | 178 | 105.64
+ 4 | 322.71 | 1771.60
+
+
+Array Size per rank = 200
+
+ n | Non-Blocking | Non Blocking
+ --| -- | ---
+ 1 | 2.57 | 2.48
+ 2 | 115.1 | 1232
+ 4 | 236.2 | 1190
+
+
 
 

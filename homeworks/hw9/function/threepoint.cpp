@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     int rghtNeigh = myRank+1;
     if (myRank==numRanks-1) rghtNeigh = 0;
 
-    int num_repeat = 5;
+    int num_repeat = 100;
     std::vector<double>  time_all(num_repeat);
     double starttime, endtime;
 
