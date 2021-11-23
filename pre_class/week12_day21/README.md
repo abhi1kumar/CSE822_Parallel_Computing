@@ -8,20 +8,19 @@ Abhinav Kumar, A61240809
 
 C’s `malloc`, C++’s `new` allocate memory on DRAM of CPU.
 
-|`malloc()` | `new`
----------------------------
+ Characteristic |`malloc()` | `new`
+--|-----------|-----------
 Constructor Call | No | Yes
 Type | Function | Operator
 Return | `void*` | Data type
 Return on Failure | `NULL` | `bad_alloc` exception
 Size calculation | Programmer | Compiler
 
+Cuda’s `cudaMalloc()` and `cudaMallocManaged()` allocate memory on  GDDRx memory/ Video RAM that is connected to, visible to and only addressable by the GPU.
+`cudaMalloc()` is very similar to `cudaMallocManaged()` and takes the same arguments. 
 
-cuda’s `cudaMalloc()` and `cudaMallocManaged()` allocate memory on  GDDRx memory/ Video RAM that is connected to, visible to and only addressable by the GPU.
-cudaMalloc() is very similar to cudaMallocManaged() and takes the same arguments. 
-
-|`cudaMalloc()` | `cudaMallocManaged()`
-----------------------------------------
+ Characteristic |`cudaMalloc()` | `cudaMallocManaged()`
+--|----------|--------------
 Access | GPU memory only | Both CPU + GPU (Cuda unified) memory
 Preferrable | Yes | No
 
