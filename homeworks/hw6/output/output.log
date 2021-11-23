@@ -1,0 +1,10 @@
+
+===============================================================================
+Running Heat Transfer
+===============================================================================
+Size= 100 Num_threads= 1 Repeat= 10 Init_temp= 1 nsteps= 100 tol= 0.001 Time= 0.0146435
+Size= 100 Num_threads= 2 Repeat= 10 Init_temp= 1 nsteps= 100 tol= 0.001 Time= 0.00755008
+Size= 100 Num_threads= 4 Repeat= 10 Init_temp= 1 nsteps= 100 tol= 0.001 Time= 0.00400596
+Size= 100 Num_threads= 8 Repeat= 10 Init_temp= 1 nsteps= 100 tol= 0.001 Time= 0.00316735
+Size= 100 Num_threads= 16 Repeat= 10 Init_temp= 1 nsteps= 100 tol= 0.001 Time= 0.00531364
+Size= 100 Num_threads= 32 Repeat= 10 Init_temp= 1 nsteps= 100 tol= 0.001 Time= 0.00823744
