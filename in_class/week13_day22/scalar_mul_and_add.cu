@@ -3,7 +3,7 @@
 
 #include <cuda_runtime.h>
 
-#include <helper_cuda.h>
+//#include <helper_cuda.h>
 
 
 __global__ void scalarMulAdd(const float *A, const float *B, const float *C, float *D, int numElements)
@@ -18,9 +18,9 @@ __global__ void scalarMulAdd(const float *A, const float *B, const float *C, flo
 
 int main(void)
 {
-    cudaError_t error = cudaSuccess;
+    //cudaError_t error = cudaSuccess;
 
-    int numElements = 50000;
+    int numElements = 51200;
     size_t size = numElements * sizeof(float);
     printf("[Vector addition of %d elements]\n", numElements);
 
@@ -42,21 +42,27 @@ int main(void)
 
     // Allocate GPU device
     float *d_A = NULL;
-    err_A = cudaMalloc((void **)&d_A, size);
+    // err_A = 
+    cudaMalloc((void **)&d_A, size);
     float *d_D = NULL;
-    err_D = cudaMalloc((void **)&d_D, size);
+    // err_D = 
+    cudaMalloc((void **)&d_D, size);
 
     float *d_B = NULL;
-    err_B = cudaMalloc((void **)&d_B, sizeof(float));
+    // err_B = 
+    cudaMalloc((void **)&d_B, sizeof(float));
     float *d_C = NULL;
-    err_C = cudaMalloc((void **)&d_C, sizeof(float));
+    // err_C = 
+    cudaMalloc((void **)&d_C, sizeof(float));
 
+    /*
     if (err_A != cudaSuccess || err_B != cudaSuccess || err_C != cudaSuccess || err_D != cudaSuccess)
     {
         fprintf(stderr, "Failed to allocate device vector (error code %s)!\n", cudaGetErrorString(err));
         exit(EXIT_FAILURE);
 
     }
+    */
 
     // Fill memory
     for (int i=0; i < numElements; ++i)
@@ -67,9 +73,9 @@ int main(void)
 
     // Copy from host to device
     printf("Copy input data from the host memory to the CUDA device\n");
-    err = cudaMemcpy(d_A, h_A, size, cudaMemcpyHostToDevice);
-    err = cudaMemcpy(d_B, h_B, sizeof(float), cudaMemcpyHostToDevice);
-    err = cudaMemcpy(d_C, h_C, sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_A, h_A, size, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_B, h_B, sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_C, h_C, sizeof(float), cudaMemcpyHostToDevice);
 
 
     // Launch the Vector Add CUDA Kernel
@@ -78,6 +84,8 @@ int main(void)
     printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid,
          threadsPerBlock);
     scalarMulAdd<<<blocksPerGrid, threadsPerBlock>>>(d_A, d_B, d_C, d_D, numElements);
+
+    /*
     err = cudaGetLastError();
 
     if (err != cudaSuccess) {
@@ -85,16 +93,22 @@ int main(void)
             cudaGetErrorString(err));
     exit(EXIT_FAILURE);
     }
+    */
 
     printf("Copy output data from the CUDA device to the host memory\n");
-    err = cudaMemcpy(h_D, d_D, size, cudaMemcpyDeviceToHost);
+    cudaMemcpy(h_D, d_D, size, cudaMemcpyDeviceToHost);
 
-    for (int i=0; i< numElements; ++i)
-        printf("%d %d", h_A[i] * h_B[0] + h_C[0], h_D[0]);
+    // for (int i=0; i< numElements; ++i)
+    //    printf("%f %f", h_A[i] * h_B[0] + h_C[0], h_D[0]);
 
     // Free device global memory
-    err = cudaFree(d_A);
-    err = cudaFree(d_B);
-    err = cudaFree(d_C);
-    err = cudaFree(d_D);
+    delete [] h_A;
+    delete [] h_B;
+    delete [] h_C;
+    delete [] h_D;    
+
+    cudaFree(d_A);
+    cudaFree(d_B);
+    cudaFree(d_C);
+    cudaFree(d_D);
 }
