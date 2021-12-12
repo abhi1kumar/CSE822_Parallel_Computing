@@ -1,0 +1,226 @@
+[Vector Matmul of 512 elements on CPU]
+Average time = 606.777832
+===============================================================================
+Running Matrix Vector Multiplication and addition
+===============================================================================
+==3024== NVPROF is profiling process 3024, command: ./a.out 1
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 1 blocks of 512 threads
+Copy output data from the CUDA device to the host memory
+==3024== Profiling application: ./a.out 1
+==3024== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   77.42%  84.027us         3  28.009us     800ns  82.427us  [CUDA memcpy HtoD]
+                   21.73%  23.583us         1  23.583us  23.583us  23.583us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.86%     928ns         1     928ns     928ns     928ns  [CUDA memcpy DtoH]
+      API calls:   99.50%  109.86ms         4  27.465ms  1.5700us  109.85ms  cudaMalloc
+                    0.17%  186.20us         4  46.549us  5.4010us  87.156us  cudaMemcpy
+                    0.15%  170.19us         1  170.19us  170.19us  170.19us  cuDeviceTotalMem
+                    0.08%  92.036us        94     979ns      84ns  36.652us  cuDeviceGetAttribute
+                    0.06%  71.345us         4  17.836us  1.4890us  61.422us  cudaFree
+                    0.01%  15.618us         1  15.618us  15.618us  15.618us  cudaLaunch
+                    0.01%  11.732us         1  11.732us  11.732us  11.732us  cuDeviceGetName
+                    0.00%  1.0270us         3     342ns      94ns     814ns  cuDeviceGetCount
+                    0.00%     835ns         5     167ns      94ns     341ns  cudaSetupArgument
+                    0.00%     672ns         2     336ns     108ns     564ns  cuDeviceGet
+                    0.00%     521ns         1     521ns     521ns     521ns  cudaConfigureCall
+==3036== NVPROF is profiling process 3036, command: ./a.out 2
+==3036== Profiling application: ./a.out 2
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 2 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+==3036== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   83.47%  84.475us         3  28.158us     800ns  82.587us  [CUDA memcpy HtoD]
+                   15.62%  15.807us         1  15.807us  15.807us  15.807us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.92%     928ns         1     928ns     928ns     928ns  [CUDA memcpy DtoH]
+      API calls:   99.25%  112.84ms         4  28.209ms  1.4670us  112.83ms  cudaMalloc
+                    0.33%  373.83us         1  373.83us  373.83us  373.83us  cuDeviceTotalMem
+                    0.16%  182.99us         4  45.748us  5.4940us  86.966us  cudaMemcpy
+                    0.15%  174.88us        94  1.8600us     183ns  69.296us  cuDeviceGetAttribute
+                    0.06%  70.525us         4  17.631us  1.4600us  61.338us  cudaFree
+                    0.02%  23.134us         1  23.134us  23.134us  23.134us  cuDeviceGetName
+                    0.01%  15.648us         1  15.648us  15.648us  15.648us  cudaLaunch
+                    0.00%  4.5320us         5     906ns      94ns  4.0530us  cudaSetupArgument
+                    0.00%  2.6940us         3     898ns     205ns  2.1740us  cuDeviceGetCount
+                    0.00%  1.3050us         2     652ns     207ns  1.0980us  cuDeviceGet
+                    0.00%     600ns         1     600ns     600ns     600ns  cudaConfigureCall
+==3048== NVPROF is profiling process 3048, command: ./a.out 4
+==3048== Profiling application: ./a.out 4
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 4 blocks of 128 threads
+Copy output data from the CUDA device to the host memory
+==3048== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   83.96%  85.083us         3  28.361us     800ns  83.483us  [CUDA memcpy HtoD]
+                   15.16%  15.359us         1  15.359us  15.359us  15.359us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.88%     896ns         1     896ns     896ns     896ns  [CUDA memcpy DtoH]
+      API calls:   99.45%  108.38ms         4  27.095ms  1.5460us  108.37ms  cudaMalloc
+                    0.19%  210.72us         1  210.72us  210.72us  210.72us  cuDeviceTotalMem
+                    0.17%  184.89us         4  46.221us  5.2170us  87.856us  cudaMemcpy
+                    0.08%  89.695us        94     954ns      79ns  36.213us  cuDeviceGetAttribute
+                    0.07%  76.618us         4  19.154us  1.4920us  65.962us  cudaFree
+                    0.01%  15.587us         1  15.587us  15.587us  15.587us  cudaLaunch
+                    0.01%  13.053us         1  13.053us  13.053us  13.053us  cuDeviceGetName
+                    0.00%  1.2250us         3     408ns     107ns     987ns  cuDeviceGetCount
+                    0.00%     952ns         5     190ns      94ns     430ns  cudaSetupArgument
+                    0.00%     819ns         1     819ns     819ns     819ns  cudaConfigureCall
+                    0.00%     552ns         2     276ns     100ns     452ns  cuDeviceGet
+==3060== NVPROF is profiling process 3060, command: ./a.out 8
+==3060== Profiling application: ./a.out 8
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 8 blocks of 64 threads
+Copy output data from the CUDA device to the host memory
+==3060== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   82.99%  83.227us         3  27.742us     800ns  81.627us  [CUDA memcpy HtoD]
+                   16.11%  16.159us         1  16.159us  16.159us  16.159us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.89%     896ns         1     896ns     896ns     896ns  [CUDA memcpy DtoH]
+      API calls:   99.48%  108.87ms         4  27.218ms  1.5090us  108.87ms  cudaMalloc
+                    0.17%  188.26us         4  47.065us  5.4690us  86.316us  cudaMemcpy
+                    0.16%  180.35us         1  180.35us  180.35us  180.35us  cuDeviceTotalMem
+                    0.08%  89.263us        94     949ns      82ns  36.198us  cuDeviceGetAttribute
+                    0.07%  76.659us         4  19.164us  1.5160us  66.459us  cudaFree
+                    0.01%  16.361us         1  16.361us  16.361us  16.361us  cudaLaunch
+                    0.01%  11.101us         1  11.101us  11.101us  11.101us  cuDeviceGetName
+                    0.00%  1.1610us         3     387ns     100ns     928ns  cuDeviceGetCount
+                    0.00%     849ns         5     169ns      90ns     338ns  cudaSetupArgument
+                    0.00%     671ns         2     335ns      98ns     573ns  cuDeviceGet
+                    0.00%     646ns         1     646ns     646ns     646ns  cudaConfigureCall
+==3075== NVPROF is profiling process 3075, command: ./a.out 16
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 16 blocks of 32 threads
+Copy output data from the CUDA device to the host memory
+==3075== Profiling application: ./a.out 16
+==3075== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   84.25%  82.812us         3  27.604us     800ns  81.212us  [CUDA memcpy HtoD]
+                   14.81%  14.559us         1  14.559us  14.559us  14.559us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.94%     928ns         1     928ns     928ns     928ns  [CUDA memcpy DtoH]
+      API calls:   99.49%  108.53ms         4  27.132ms  1.4850us  108.52ms  cudaMalloc
+                    0.17%  183.97us         4  45.993us  5.3490us  86.213us  cudaMemcpy
+                    0.17%  180.23us         1  180.23us  180.23us  180.23us  cuDeviceTotalMem
+                    0.08%  89.267us        94     949ns      80ns  36.169us  cuDeviceGetAttribute
+                    0.07%  75.327us         4  18.831us  1.5080us  65.188us  cudaFree
+                    0.01%  15.852us         1  15.852us  15.852us  15.852us  cudaLaunch
+                    0.01%  11.418us         1  11.418us  11.418us  11.418us  cuDeviceGetName
+                    0.00%  1.2470us         3     415ns      91ns  1.0170us  cuDeviceGetCount
+                    0.00%     913ns         5     182ns      92ns     419ns  cudaSetupArgument
+                    0.00%     724ns         1     724ns     724ns     724ns  cudaConfigureCall
+                    0.00%     470ns         2     235ns      85ns     385ns  cuDeviceGet
+==3088== NVPROF is profiling process 3088, command: ./a.out 32
+==3088== Profiling application: ./a.out 32
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 32 blocks of 16 threads
+Copy output data from the CUDA device to the host memory
+==3088== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   83.24%  84.252us         3  28.084us     768ns  82.684us  [CUDA memcpy HtoD]
+                   15.87%  16.063us         1  16.063us  16.063us  16.063us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.89%     896ns         1     896ns     896ns     896ns  [CUDA memcpy DtoH]
+      API calls:   99.51%  113.42ms         4  28.354ms  1.4480us  113.41ms  cudaMalloc
+                    0.16%  180.25us         1  180.25us  180.25us  180.25us  cuDeviceTotalMem
+                    0.16%  178.72us         4  44.679us  5.2770us  87.278us  cudaMemcpy
+                    0.08%  90.040us        94     957ns      79ns  36.459us  cuDeviceGetAttribute
+                    0.06%  72.979us         4  18.244us  1.6670us  63.223us  cudaFree
+                    0.01%  16.782us         1  16.782us  16.782us  16.782us  cuDeviceGetName
+                    0.01%  14.732us         1  14.732us  14.732us  14.732us  cudaLaunch
+                    0.00%  1.3580us         3     452ns      89ns  1.1390us  cuDeviceGetCount
+                    0.00%     863ns         5     172ns      92ns     366ns  cudaSetupArgument
+                    0.00%     654ns         2     327ns     124ns     530ns  cuDeviceGet
+                    0.00%     615ns         1     615ns     615ns     615ns  cudaConfigureCall
+==3100== NVPROF is profiling process 3100, command: ./a.out 64
+==3100== Profiling application: ./a.out 64
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 64 blocks of 8 threads
+Copy output data from the CUDA device to the host memory
+==3100== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   76.76%  84.219us         3  28.073us     800ns  82.587us  [CUDA memcpy HtoD]
+                   22.43%  24.606us         1  24.606us  24.606us  24.606us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.82%     896ns         1     896ns     896ns     896ns  [CUDA memcpy DtoH]
+      API calls:   99.24%  111.89ms         4  27.973ms  1.5140us  111.89ms  cudaMalloc
+                    0.34%  380.42us         1  380.42us  380.42us  380.42us  cuDeviceTotalMem
+                    0.17%  188.82us         4  47.206us  5.5710us  87.227us  cudaMemcpy
+                    0.16%  176.43us        94  1.8760us     177ns  69.291us  cuDeviceGetAttribute
+                    0.06%  68.903us         4  17.225us  1.4300us  59.703us  cudaFree
+                    0.02%  23.242us         1  23.242us  23.242us  23.242us  cuDeviceGetName
+                    0.01%  15.087us         1  15.087us  15.087us  15.087us  cudaLaunch
+                    0.00%  2.4610us         3     820ns     221ns  1.8320us  cuDeviceGetCount
+                    0.00%  1.2570us         2     628ns     251ns  1.0060us  cuDeviceGet
+                    0.00%     825ns         5     165ns      90ns     343ns  cudaSetupArgument
+                    0.00%     575ns         1     575ns     575ns     575ns  cudaConfigureCall
+==3112== NVPROF is profiling process 3112, command: ./a.out 128
+==3112== [Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 128 blocks of 4 threads
+Copy output data from the CUDA device to the host memory
+Profiling application: ./a.out 128
+==3112== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   64.49%  84.092us         3  28.030us     800ns  82.492us  [CUDA memcpy HtoD]
+                   34.82%  45.406us         1  45.406us  45.406us  45.406us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                    0.69%     896ns         1     896ns     896ns     896ns  [CUDA memcpy DtoH]
+      API calls:   99.46%  105.86ms         4  26.466ms  1.5990us  105.86ms  cudaMalloc
+                    0.19%  202.25us         4  50.563us  5.4520us  86.859us  cudaMemcpy
+                    0.16%  170.75us         1  170.75us  170.75us  170.75us  cuDeviceTotalMem
+                    0.09%  91.250us        94     970ns      81ns  36.592us  cuDeviceGetAttribute
+                    0.07%  74.407us         4  18.601us  1.5250us  62.196us  cudaFree
+                    0.01%  15.414us         1  15.414us  15.414us  15.414us  cudaLaunch
+                    0.01%  11.453us         1  11.453us  11.453us  11.453us  cuDeviceGetName
+                    0.00%  4.1920us         5     838ns      92ns  3.6570us  cudaSetupArgument
+                    0.00%  1.2180us         3     406ns      93ns     970ns  cuDeviceGetCount
+                    0.00%     818ns         2     409ns     105ns     713ns  cuDeviceGet
+                    0.00%     766ns         1     766ns     766ns     766ns  cudaConfigureCall
+==3124== NVPROF is profiling process 3124, command: ./a.out 256
+==3124== Profiling application: ./a.out 256
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 256 blocks of 2 threads
+Copy output data from the CUDA device to the host memory
+==3124== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   50.41%  86.683us         1  86.683us  86.683us  86.683us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                   49.05%  84.347us         3  28.115us     800ns  82.747us  [CUDA memcpy HtoD]
+                    0.54%     928ns         1     928ns     928ns     928ns  [CUDA memcpy DtoH]
+      API calls:   99.43%  105.18ms         4  26.296ms  1.5160us  105.18ms  cudaMalloc
+                    0.23%  245.97us         4  61.493us  5.7860us  92.173us  cudaMemcpy
+                    0.16%  166.95us         1  166.95us  166.95us  166.95us  cuDeviceTotalMem
+                    0.09%  90.829us        94     966ns      80ns  36.127us  cuDeviceGetAttribute
+                    0.07%  70.959us         4  17.739us  1.4940us  61.652us  cudaFree
+                    0.01%  15.611us         1  15.611us  15.611us  15.611us  cudaLaunch
+                    0.01%  12.033us         1  12.033us  12.033us  12.033us  cuDeviceGetName
+                    0.00%  1.7500us         2     875ns     110ns  1.6400us  cuDeviceGet
+                    0.00%  1.1990us         3     399ns      88ns     987ns  cuDeviceGetCount
+                    0.00%  1.0680us         5     213ns      92ns     555ns  cudaSetupArgument
+                    0.00%     568ns         1     568ns     568ns     568ns  cudaConfigureCall
+==3136== NVPROF is profiling process 3136, command: ./a.out 512
+==3136== Profiling application: ./a.out 512
+[Vector addition of 512 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 512 blocks of 1 threads
+Copy output data from the CUDA device to the host memory
+==3136== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   65.88%  164.18us         1  164.18us  164.18us  164.18us  matrixMulAdd(float const *, float const *, float const *, float*, int)
+                   33.76%  84.123us         3  28.041us     800ns  82.491us  [CUDA memcpy HtoD]
+                    0.36%     896ns         1     896ns     896ns     896ns  [CUDA memcpy DtoH]
+      API calls:   99.30%  105.11ms         4  26.278ms  1.3910us  105.10ms  cudaMalloc
+                    0.31%  328.17us         4  82.042us  5.3600us  175.15us  cudaMemcpy
+                    0.21%  223.91us         1  223.91us  223.91us  223.91us  cuDeviceTotalMem
+                    0.08%  89.408us        94     951ns      80ns  35.859us  cuDeviceGetAttribute
+                    0.07%  74.206us         4  18.551us  1.5650us  61.391us  cudaFree
+                    0.01%  15.688us         1  15.688us  15.688us  15.688us  cudaLaunch
+                    0.01%  10.767us         1  10.767us  10.767us  10.767us  cuDeviceGetName
+                    0.00%  1.2070us         3     402ns      99ns     969ns  cuDeviceGetCount
+                    0.00%     894ns         2     447ns      91ns     803ns  cuDeviceGet
+                    0.00%     821ns         5     164ns     102ns     318ns  cudaSetupArgument
+                    0.00%     673ns         1     673ns     673ns     673ns  cudaConfigureCall
+
